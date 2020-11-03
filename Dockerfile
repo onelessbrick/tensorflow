@@ -1,5 +1,5 @@
-FROM nvcr.io/nvidia/tensorflow:20.10-tf2-py3
-  
+# FROM nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+FROM tensorflow/tensorflow:latest-gpu-jupyter  
 COPY limits.conf /etc/security
 
 # ENTRYPOINT [ \
