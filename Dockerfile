@@ -8,9 +8,11 @@ ENV HOME=/workspace
 
 # ENV OAUTH_CALLBACK_URL=http://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback
 
-ENV OAUTH_CALLBACK_URL=http://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/request
-ENV OAUTH_CLIENT_ID=openshift-browser-client
-#ENV OAUTH_CLIENT_SECRET=db70c859ba095e67a83273ed4485853eb94a530afca6dc05665af4206b227615
+#ENV OAUTH_CALLBACK_URL=http://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/request
+ENV OAUTH_CALLBACK_URL=http://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token
+#ENV OAUTH_CLIENT_ID=openshift-browser-client
+ENV OAUTH_CLIENT_ID=tensorflow
+ENV OAUTH_CLIENT_SECRET=db70c859ba095e67a83273ed4485853eb94a530afca6dc05665af4206b227615
 EXPOSE 8000 8000
 #CMD ["/usr/local/bin/jupyterhub","-f","/workspace/jupyterhub_config.py"]
 CMD ["/usr/local/bin/jupyterhub"]
