@@ -5,7 +5,7 @@ from oauthenticator.openshift import OpenShiftOAuthenticator
 
 OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/display'
 
-OpenShiftOAuthenticator.auto_login = False
+OpenShiftOAuthenticator.auto_login = True
 
 OpenShiftOAuthenticator.oauth_callback_url = 'https://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
 
@@ -28,7 +28,7 @@ OpenShiftOAuthenticator.validate_cert = False
 #  Choices: any of [0, 10, 20, 30, 40, 50, 'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']
 #  Default: 30
 #JAB:
-c.Application.log_level = 'DEBUG'
+c.Application.log_level = 0
 
 ## Instead of starting the Application, dump configuration to stdout
 #  Default: False
@@ -1153,9 +1153,7 @@ c.JupyterHub.authenticator_class = 'oauthenticator.openshift.OpenShiftOAuthentic
 #  
 #  New in JupyterHub 0.8
 #  Default: False
-# JAB:
 # c.Authenticator.enable_auth_state = False
-c.Authenticator.enable_auth_state = True
 
 ## An optional hook function that you can implement to do some bootstrapping work
 #  during authentication. For example, loading user account details from an
@@ -1170,22 +1168,22 @@ c.Authenticator.enable_auth_state = True
 #  .. versionadded: 1.0
 #  
 #  Example::
-#  JAB:
-      import os, pwd
-      def my_hook(authenticator, handler, authentication):
-          user_data = pwd.getpwnam(authentication['name'])
-          spawn_data = {
-              'pw_data': user_data
-              'gid_list': os.getgrouplist(authentication['name'], user_data.pw_gid)
-          }
-  
-          if authentication['auth_state'] is None:
-              authentication['auth_state'] = {}
-          authentication['auth_state']['spawn_data'] = spawn_data
-  
-          return authentication
-  
-      c.Authenticator.post_auth_hook = my_hook
+#  
+#      import os, pwd
+#      def my_hook(authenticator, handler, authentication):
+#          user_data = pwd.getpwnam(authentication['name'])
+#          spawn_data = {
+#              'pw_data': user_data
+#              'gid_list': os.getgrouplist(authentication['name'], user_data.pw_gid)
+#          }
+#  
+#          if authentication['auth_state'] is None:
+#              authentication['auth_state'] = {}
+#          authentication['auth_state']['spawn_data'] = spawn_data
+#  
+#          return authentication
+#  
+#      c.Authenticator.post_auth_hook = my_hook
 #  Default: None
 # c.Authenticator.post_auth_hook = None
 
