@@ -6,7 +6,7 @@ ADD jupyterhub_config.py /workspace
 
 ENV PATH=/usr/local/nvm/versions/node/v15.2.1/bin:/usr/local/mpi/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ucx/bin:/opt/tensorrt/bin
 ENV HOME=/workspace
-ENV JUPYTERHUB_CRYPT_KEY="cTktSFZ0S3NsTmlqSXQ3QnExUE5YSzloYnMtMVR3b1BWNENvZVhSU2gxUQ=="
+ENV JUPYTERHUB_CRYPT_KEY="am9lLmJvbmU="
 
 RUN pip install jupyterhub
 RUN pip install oauthenticator
