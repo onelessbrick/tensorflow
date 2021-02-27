@@ -21,6 +21,8 @@ OpenShiftOAuthenticator.auto_login = True
 
 OpenShiftOAuthenticator.validate_cert = False
 
+OpenShiftOAuthenticator.enable_auth_state = True
+
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
 #------------------------------------------------------------------------------
