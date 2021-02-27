@@ -3,11 +3,17 @@
 
 from oauthenticator.openshift import OpenShiftOAuthenticator
 
-OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/display'
+OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/authorize'
+
+OpenShiftOAuthenticator.token_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/request'
+
+OpenShiftOAuthenticator.oauth_callback_url = 'http://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
+
+OpenShiftOAuthenticator.client_id = 'jupyter'
+
+OpenShiftOAuthenticator.client_secret = 'db70c859ba095e67a83273ed4485853eb94a530afca6dc05665af4206b227615'
 
 OpenShiftOAuthenticator.auto_login = True
-
-OpenShiftOAuthenticator.oauth_callback_url = 'https://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
 
 OpenShiftOAuthenticator.validate_cert = False
 
