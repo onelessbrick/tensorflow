@@ -3,11 +3,11 @@
 
 from oauthenticator.openshift import OpenShiftOAuthenticator
 
-#OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/authorize'
-OpenShiftOAuthenticator.authorize_url = 'http://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/oauth/authorize'
+#OpenShiftOAuthenticator.authorize_url = 'http://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/oauth/authorize'
+OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/authorize'
 
-#OpenShiftOAuthenticator.token_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/request'
-OpenShiftOAuthenticator.token_url = 'http//jupyterhub-tensorflow.apps.ocp.onelessbrick.com/oauth/token/request'
+#OpenShiftOAuthenticator.token_url = 'http//jupyterhub-tensorflow.apps.ocp.onelessbrick.com/oauth/token/request'
+OpenShiftOAuthenticator.token_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token'
 
 OpenShiftOAuthenticator.oauth_callback_url = 'http://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
 
@@ -38,7 +38,7 @@ OpenShiftOAuthenticator.validate_cert = False
 #  Choices: any of [0, 10, 20, 30, 40, 50, 'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']
 #  Default: 30
 #JAB:
-c.Application.log_level = 0
+c.Application.log_level = 10
 
 ## Instead of starting the Application, dump configuration to stdout
 #  Default: False
