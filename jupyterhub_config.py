@@ -756,15 +756,12 @@ c.JupyterHub.authenticator_class = 'oauthenticator.openshift.OpenShiftOAuthentic
 #  
 #  Example::
 #  
-#JAB:
-      def userdata_hook(spawner, auth_state):
+#      def userdata_hook(spawner, auth_state):
 #          spawner.userdata = auth_state["userdata"]
-          spawner.userdata = auth_state["secret"]
 #  
-      c.Spawner.auth_state_hook = userdata_hook
+#      c.Spawner.auth_state_hook = userdata_hook
 #  Default: None
 # c.Spawner.auth_state_hook = None
-c.Spawner.auth_state_hook = userdata_hook
 
 ## The command used for starting the single-user server.
 #  
@@ -1166,10 +1163,7 @@ c.Spawner.auth_state_hook = userdata_hook
 #  
 #  New in JupyterHub 0.8
 #  Default: False
-#JAB:
 # c.Authenticator.enable_auth_state = False
-c.Authenticator.enable_auth_state = True
-
 
 ## An optional hook function that you can implement to do some bootstrapping work
 #  during authentication. For example, loading user account details from an
