@@ -1,15 +1,15 @@
 # Configuration file for jupyterhub.
 # See: https://oauthenticator.readthedocs.io/en/stable/api/gen/oauthenticator.openshift.html
 
-from oauthenticator.openshift import LocalOpenShiftOAuthenticator
+from oauthenticator.openshift import OpenShiftOAuthenticator
 
-LocalOpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/display'
+OpenShiftOAuthenticator.authorize_url = 'https://oauth-openshift.apps.ocp.onelessbrick.com/oauth/token/display'
 
-LocalOpenShiftOAuthenticator.auto_login = True
+OpenShiftOAuthenticator.auto_login = True
 
-LocalOpenShiftOAuthenticator.oauth_callback_url = 'https://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
+OpenShiftOAuthenticator.oauth_callback_url = 'https://jupyterhub-tensorflow.apps.ocp.onelessbrick.com/hub/oauth_callback'
 
-LocalOpenShiftOAuthenticator.validate_cert = False
+OpenShiftOAuthenticator.validate_cert = False
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
@@ -27,7 +27,8 @@ LocalOpenShiftOAuthenticator.validate_cert = False
 ## Set the log level by value or name.
 #  Choices: any of [0, 10, 20, 30, 40, 50, 'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']
 #  Default: 30
-# c.Application.log_level = 30
+#JAB:
+c.Application.log_level = 0
 
 ## Instead of starting the Application, dump configuration to stdout
 #  Default: False
@@ -126,6 +127,8 @@ LocalOpenShiftOAuthenticator.validate_cert = False
 #    - pam: jupyterhub.auth.PAMAuthenticator
 #  Default: 'jupyterhub.auth.PAMAuthenticator'
 # c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
+# JAB:
+c.JupyterHub.authenticator_class = 'oauthenticator.openshift.OpenShiftOAuthenticator'
 
 ## The base URL of the entire application.
 #  
