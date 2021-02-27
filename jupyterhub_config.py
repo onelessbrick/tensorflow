@@ -17,7 +17,7 @@ OpenShiftOAuthenticator.client_id = 'jupyter'
 OpenShiftOAuthenticator.client_secret = 'db70c859ba095e67a83273ed4485853eb94a530afca6dc05665af4206b227615'
 #OpenShiftOAuthenticator.client_secret = 'q9-HVtKslNijIt7Bq1PNXK9hbs-1TwoPV4CoeXRSh1Q'
 
-OpenShiftOAuthenticator.auto_login = False
+OpenShiftOAuthenticator.auto_login = True
 
 OpenShiftOAuthenticator.validate_cert = False
 
